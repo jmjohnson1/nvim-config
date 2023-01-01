@@ -50,5 +50,8 @@ require('packer').startup(function(use)
 		"lukas-reineke/indent-blankline.nvim"
 	}
 
+	-- Onedark color scheme
+	use 'navarasu/onedark.nvim'
+
 end)
 
