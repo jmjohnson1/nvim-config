@@ -27,7 +27,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorsheme
 vim.o.termguicolors = true
-vim.cmd.colorscheme("everforest")
+
 
 -- Improve completion
 vim.o.completeopt = 'menuone,noselect'
@@ -36,6 +36,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
--- Setup text wrapping at 80 characters
+-- Setup text wrapping at 100 characters
 vim.o.textwidth = 80
 

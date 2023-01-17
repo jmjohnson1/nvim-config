@@ -56,3 +56,5 @@ require('packer').startup(function(use)
 
 
 end)
+
+vim.cmd.colorscheme("everforest")
