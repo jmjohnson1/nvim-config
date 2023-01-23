@@ -54,6 +54,9 @@ require('packer').startup(function(use)
 	-- Everforest color scheme
 	use {"sainnhe/everforest"}
 
+	-- Easy align
+	use {"junegunn/vim-easy-align"}
+
 
 end)
 
