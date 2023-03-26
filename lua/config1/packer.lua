@@ -54,6 +54,9 @@ require('packer').startup(function(use)
 	-- Everforest color scheme
 	use {"sainnhe/everforest"}
 
+	-- VimTeX
+	use {"lervag/vimtex"}
+
 
 end)
 
