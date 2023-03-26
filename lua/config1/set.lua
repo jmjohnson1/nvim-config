@@ -9,7 +9,7 @@ vim.o.nu = true
 vim.o.relativenumber = true
 
 -- Enable the mouse
-vim.o.mouse = 'a' 
+--vim.o.mouse = 'a' 
 
 -- Enable break indent ( preserves indenting )
 vim.o.breakindent = true
@@ -28,6 +28,7 @@ vim.wo.signcolumn = 'yes'
 -- Set colorsheme
 vim.o.termguicolors = true
 
+
 -- Improve completion
 vim.o.completeopt = 'menuone,noselect'
 
@@ -35,5 +36,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
--- Setup text wrapping at 80 characters
+-- Setup text wrapping at 100 characters
 vim.o.textwidth = 80
+

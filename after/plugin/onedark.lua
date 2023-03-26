@@ -1,7 +1,6 @@
-require('onedark').setup{
-	style = 'warmer'
-}
-
-require('onedark').load()
-
+--require('onedark').setup{
+--	style = 'warmer'
+--}
+--
+--require('onedark').load()
 
