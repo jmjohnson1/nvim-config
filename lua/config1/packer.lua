@@ -57,6 +57,15 @@ require('packer').startup(function(use)
 	-- VimTeX
 	use {"lervag/vimtex"}
 
+	-- Easy align
+	use {"junegunn/vim-easy-align"}
+
+	-- tmux integration
+	use ({
+		"aserowy/tmux.nvim",
+		config = function() return require("tmux").setup() end
+	})
+
 
 end)
 
