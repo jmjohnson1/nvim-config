@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim', 'fortran', 'arduino'},
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim', 'fortran', 'arduino', 'matlab'},
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -58,3 +58,15 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.matlab = {
+  install_info = {
+    url = "https://github.com/mstanciu552/tree-sitter-matlab.git",
+    files = { "src/parser.c" },
+    branch= 'main'
+  },
+  filetype = "matlab", -- if filetype does not agrees with parser name
+}
+
