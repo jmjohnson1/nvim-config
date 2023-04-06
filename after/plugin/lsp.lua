@@ -86,6 +86,18 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+require('lspconfig').pylsp.setup{
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'E221', 'E226'}
+				}
+			}
+		}
+	}
+}
+
 -- Turn on lsp status information
 require('fidget').setup()
 
