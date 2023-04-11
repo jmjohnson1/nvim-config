@@ -98,6 +98,15 @@ require('lspconfig').pylsp.setup{
 	}
 }
 
+local MY_FQBN = "arduino:avr:unomini"
+require('lspconfig').arduino_language_server.setup {
+	cmd = {
+		"arduino-language-server",
+		"-cli-config", "/home/james/bin/arduino-cli",
+		"-fqbn", MY_FQBN
+	}
+}
+
 -- Turn on lsp status information
 require('fidget').setup()
 
