@@ -28,7 +28,6 @@ vim.wo.signcolumn = 'yes'
 -- Set colorsheme
 vim.o.termguicolors = true
 
-
 -- Improve completion
 vim.o.completeopt = 'menuone,noselect'
 
@@ -39,3 +38,9 @@ vim.o.shiftwidth = 4
 -- Setup text wrapping at 100 characters
 vim.o.textwidth = 100
 
+-- Add column at 80 characters
+vim.o.colorcolumn = 80
+
+vim.cmd[[
+	
+]]

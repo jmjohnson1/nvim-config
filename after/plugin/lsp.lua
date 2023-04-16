@@ -91,9 +91,17 @@ require('lspconfig').pylsp.setup {
 		pylsp = {
 			plugins = {
 				pycodestyle = {
-					ignore = { 'E221', 'E226' },
+					enabled = true,
+					ignore = { 'E221', 'E226', 'E265', 'E266' },
 					maxLineLength = 100
-				}
+				},
+
+
+				-- Disabled standard plugins
+				autopep8 = {enabled = false},
+				yapf = {enabled = false},
+				pydocstyle = {enabled = false},
+				flake8 = {enabled = false},
 			}
 		}
 	}
