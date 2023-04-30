@@ -8,4 +8,3 @@ vim.g.mapleader = " "
 -- Copy/paste system clipboard
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>p", '"+p')
-

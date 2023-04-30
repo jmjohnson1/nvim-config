@@ -63,7 +63,16 @@ require('packer').startup(function(use)
 	-- tmux integration
 	use ({
 		"aserowy/tmux.nvim",
-		config = function() return require("tmux").setup() end
+		config = function()
+			require("tmux").setup({
+				copy_sync = {
+					enable = false,
+					redirect_to_clipboard = true,
+					register_offset = 0,
+					sync_clipboard = true,
+					sync_deletes = true,
+				},})
+		end
 	})
 
 

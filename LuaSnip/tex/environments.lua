@@ -140,9 +140,9 @@ return {
         [[
         \begin{figure}[htb!]
           \centering
-          \includegraphics[width=<>\linewidth]{<>}
           \caption{<>}
           \label{fig:<>}
+          \includegraphics[width=<>\linewidth]{<>}
         \end{figure}
         ]],
         {
@@ -160,9 +160,9 @@ return {
         [[
         \begin{figure}[htb!]
           \centering
-          \includesvg[width=<>\linewidth, inkscapelatex=false]{<>}
           \caption{<>}
           \label{fig:<>}
+          \includesvg[width=<>\linewidth, inkscapelatex=false]{<>}
         \end{figure}
         ]],
         {
