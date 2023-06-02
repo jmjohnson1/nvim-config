@@ -32,8 +32,8 @@ vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noselect'
 
 -- Set the tab width and shift width
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 
 -- Setup text wrapping at 100 characters
 vim.o.textwidth = 100
