@@ -40,3 +40,6 @@ vim.o.textwidth = 100
 
 -- Add column at 80 characters
 vim.o.colorcolumn = 80
+
+-- Set no display wrapping
+vim.o.wrap = false

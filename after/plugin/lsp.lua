@@ -1,4 +1,6 @@
 -- LSP settings
+-- Disable logging
+vim.lsp.set_log_level("DEBUG")
 -- This function gets run when an LSP connects to a particular buffer
 local on_attach = function(_, bufnr)
 	local nmap = function(keys, func, desc)
@@ -45,7 +47,7 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-	-- clangd = {},
+	 clangd = {},
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
@@ -107,14 +109,18 @@ require('lspconfig').pylsp.setup {
 	}
 }
 
-local MY_FQBN = "arduino:avr:unomini"
-require('lspconfig').arduino_language_server.setup {
-	cmd = {
-		"arduino-language-server",
-		"-cli-config", "/home/james/bin/arduino-cli",
-		"-fqbn", MY_FQBN
-	}
+require('lspconfig').clangd.setup {
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "arduino"},
 }
+
+--local MY_FQBN = "teensy:avr:teensy41"
+--require('lspconfig').arduino_language_server.setup {
+--	cmd = {
+--		"arduino-language-server",
+--		"-cli-config", "/home/james/bin/arduino-cli",
+--		"-fqbn", MY_FQBN
+--	}
+--}
 
 -- Turn on lsp status information
 require('fidget').setup()
