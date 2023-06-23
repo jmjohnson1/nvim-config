@@ -75,6 +75,7 @@ require('mason').setup()
 local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
+	PATH = "prepend",
 	ensure_installed = vim.tbl_keys(servers),
 }
 
@@ -114,10 +115,16 @@ require('lspconfig').clangd.setup {
 }
 
 local MY_FQBN = "teensy:avr:teensy41"
+local cliPath = "/home/james/bin/arduino-cli"
+-- Changes the path of arduino-cli on macos
+if vim.fn.has('macunix') then
+	cliPath = "/opt/homebrew/bin/arduino-cli"
+end
 require('lspconfig').arduino_language_server.setup {
+	filetypes = {"arduino", "cpp"},
 	cmd = {
 		"arduino-language-server",
-		"-cli-config", "/home/james/bin/arduino-cli",
+		"-cli-config", cliPath,
 		"-fqbn", MY_FQBN
 	}
 }
