@@ -110,17 +110,17 @@ require('lspconfig').pylsp.setup {
 }
 
 require('lspconfig').clangd.setup {
-	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "arduino"},
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto"},
 }
 
---local MY_FQBN = "teensy:avr:teensy41"
---require('lspconfig').arduino_language_server.setup {
---	cmd = {
---		"arduino-language-server",
---		"-cli-config", "/home/james/bin/arduino-cli",
---		"-fqbn", MY_FQBN
---	}
---}
+local MY_FQBN = "teensy:avr:teensy41"
+require('lspconfig').arduino_language_server.setup {
+	cmd = {
+		"arduino-language-server",
+		"-cli-config", "/home/james/bin/arduino-cli",
+		"-fqbn", MY_FQBN
+	}
+}
 
 -- Turn on lsp status information
 require('fidget').setup()
