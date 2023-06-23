@@ -75,6 +75,15 @@ require('packer').startup(function(use)
 		end
 	})
 
+	--Vim Arduino control
+	use {'stevearc/vim-arduino'}
+
+
+	-- Lualine
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 
 end)
 
