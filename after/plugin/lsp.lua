@@ -47,7 +47,7 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-	 clangd = {},
+	clangd = {},
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
@@ -61,11 +61,27 @@ local servers = {
 	},
 }
 
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+
+--require('lspconfig').clangd.setup {
+--	capabilities = cmp_nvim_lsp.default_capabilities(),
+--	cmd = {
+--		"clangd",
+--		"--offset-encoding=utf-16",
+--	},
+--}
 -- Setup neovim lua configuration
 require('neodev').setup()
 --
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = 'utf-8'
+require('lspconfig').clangd.setup {
+	on_attach = on_attach,
+	capabilities = {offsetEncoding = "utf-8"},
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "arduino" },
+}
+
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Setup mason so it can manage external tooling
@@ -101,18 +117,15 @@ require('lspconfig').pylsp.setup {
 
 
 				-- Disabled standard plugins
-				autopep8 = {enabled = false},
-				yapf = {enabled = false},
-				pydocstyle = {enabled = false},
-				flake8 = {enabled = false},
+				autopep8 = { enabled = false },
+				yapf = { enabled = false },
+				pydocstyle = { enabled = false },
+				flake8 = { enabled = false },
 			}
 		}
 	}
 }
 
-require('lspconfig').clangd.setup {
-	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto"},
-}
 
 local MY_FQBN = "teensy:avr:teensy41"
 local cliPath = "/home/james/bin/arduino-cli"
@@ -120,14 +133,14 @@ local cliPath = "/home/james/bin/arduino-cli"
 if vim.fn.has('macunix') then
 	cliPath = "/opt/homebrew/bin/arduino-cli"
 end
-require('lspconfig').arduino_language_server.setup {
-	filetypes = {"arduino", "cpp"},
-	cmd = {
-		"arduino-language-server",
-		"-cli-config", cliPath,
-		"-fqbn", MY_FQBN
-	}
-}
+--require('lspconfig').arduino_language_server.setup {
+--	filetypes = { "arduino" },
+--	cmd = {
+--		"arduino-language-server",
+--		"-cli-config", cliPath,
+--		"-fqbn", MY_FQBN
+--	}
+--}
 
 -- Turn on lsp status information
 require('fidget').setup()
