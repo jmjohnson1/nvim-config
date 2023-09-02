@@ -133,14 +133,14 @@ local cliPath = "/home/james/bin/arduino-cli"
 if vim.fn.has('macunix') then
 	cliPath = "/opt/homebrew/bin/arduino-cli"
 end
---require('lspconfig').arduino_language_server.setup {
---	filetypes = { "arduino" },
---	cmd = {
---		"arduino-language-server",
---		"-cli-config", cliPath,
---		"-fqbn", MY_FQBN
---	}
---}
+require('lspconfig').arduino_language_server.setup {
+	filetypes = { "arduino" },
+	cmd = {
+		"arduino-language-server",
+		"-cli-config", cliPath,
+		"-fqbn", MY_FQBN
+	}
+}
 
 -- Turn on lsp status information
 require('fidget').setup()
