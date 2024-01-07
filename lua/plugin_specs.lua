@@ -101,6 +101,11 @@ local plugin_specs = {
 			'nvim-tree/nvim-web-devicons',
 		},
 	},
+
+	-- Sessions
+	{
+		"natecraddock/sessions.nvim"
+	},
 }
 
 require("lazy").setup(plugin_specs)
