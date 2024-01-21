@@ -104,7 +104,9 @@ local plugin_specs = {
 
 	-- Sessions
 	{
-		"natecraddock/sessions.nvim"
+		"natecraddock/sessions.nvim",
+		lazy = false,
+		priority = 500,
 	},
 }
 
