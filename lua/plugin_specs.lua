@@ -74,7 +74,8 @@ local plugin_specs = {
 		end,
 	},
 	{
-		"lervag/vimtex"
+		"lervag/vimtex",
+		lazy = false
 	},
 	{
 		"junegunn/vim-easy-align"
